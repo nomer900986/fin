@@ -129,7 +129,18 @@ class Box2 extends StatelessWidget{
                         )
                     )
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(context: context,builder: (BuildContext context){
+                  return AlertDialog(
+                      title: Text('Открыть новый счет'),
+                      content: TextField(
+                    onChanged: (String value) {
+
+                    },
+                    ),
+                  );
+                  });
+                },
                 child: const Text('Открыть новый счет', style: TextStyle(
                   color: Colors.black,
                 ),),
