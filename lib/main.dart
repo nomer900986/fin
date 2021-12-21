@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:financial_analysis/home_screen.dart';
 
+
+
 void main() {
+
   runApp(const MyApp());
 }
 
@@ -43,7 +46,6 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body:  this.getBody(),
 
       bottomNavigationBar: BottomNavigationBar(
@@ -69,12 +71,12 @@ class MyHomePageState extends State<MyHomePage> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.event_note_outlined,size: 30),
-            label: 'Планирование',
+            icon: Icon(Icons.account_circle_outlined, size: 30, color: Colors.black),
+            label: 'Аккаунт',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.more_horiz_outlined,size: 30),
-            label: 'Больше',
+            icon: Icon(Icons.settings_outlined, size: 30, color: Colors.black),
+            label: 'Настройки',
           ),
         ],
         onTap: (int index) {
@@ -128,7 +130,7 @@ class MyControlState extends State<MyControl> {
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
-                icon: const Icon( //щас мы его и примем пидорасика ......пора подобедать....пойду полежу чутка
+                icon: const Icon(
                   Icons.account_circle_outlined, size: 30, color: Colors.black,
                 ),
                 onPressed: () {
@@ -203,7 +205,6 @@ class MyControlState extends State<MyControl> {
           ),
         ],
       ),
-
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white10,
@@ -373,7 +374,91 @@ class MyPlans extends StatefulWidget {
 class MyPlansState extends State<MyPlans> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("Profile"));
+    return Scaffold(
+        backgroundColor: const Color.fromRGBO(235,233,233,1),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: Text("Профиль"),
+        ),
+        body:
+        Container(
+            child:
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
+                    child:
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                                    IconButton(
+                                      iconSize: 125,
+                                    icon: const Icon(
+                                    Icons.account_circle_outlined, size: 125, color: Colors.black,
+                                    ),
+                                    onPressed: () {}
+                                    ),
+                            ],
+                          ),
+                          Text("Имя пользователя"),
+                          Text("popka@gmail.com", style: TextStyle(color: Colors.black54),)
+                        ],
+                      ),
+                  ),
+                      Container( padding: const EdgeInsets.fromLTRB(0,0,0,0), child: Container(
+                          width: MediaQuery.of(context).size.width/2,
+                          height: 68,
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)
+                          ),
+                          child: Column(
+                          children: [],),),),
+                      Container(
+                          height: MediaQuery.of(context).size.height /2.5,
+                          padding: const EdgeInsets.all(10),
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              topLeft:Radius.circular(30),
+                              topRight:Radius.circular(30),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text('popka')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('jopka')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('jopka')
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('jopkak')
+                                ],
+                              ),
+                            ],
+                          )
+                      ),
+                ],
+              )
+        )
+    );
   }
 }
 
@@ -389,70 +474,7 @@ class MyMore extends StatefulWidget {
 class MyMoreState extends State<MyMore> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromRGBO(235,233,233,1),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        
-        actions: <Widget>[
-          Builder(
-              builder: (BuildContext context) {
-                return IconButton(
-                    icon: const Icon(
-                      Icons.settings_outlined, size: 30, color: Colors.black,),
-                    onPressed: () {
-                    }
-                );
-              }
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Container(padding: const EdgeInsets.fromLTRB(0,50,0,0),
-          child: Container(
-
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          padding: const EdgeInsets.all(10),
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft:Radius.circular(30),
-              topRight:Radius.circular(30),
-            ),
-          ),
-          child: Container(
-            child: Column(
-
-            children: [
-              Row(
-                children: [
-                  Text('tetert')
-                ],
-              ),
-              Row(
-                children: [
-                  Text('tetert')
-                ],
-              ),
-              Row(
-                children: [
-                  Text('tetert')
-                ],
-              ),
-              Row(
-                children: [
-                  Text('tetert')
-                ],
-              ),
-            ],
-          ),
-          )
-          )
-        ),
-      )
-    );
+    return Center(child: Text("Popka"));
   }
 }
 
